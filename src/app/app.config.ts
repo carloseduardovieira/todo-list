@@ -4,8 +4,8 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { routes } from './app.routes';
-import { TodoEffects } from './shared/effects/todo.effects';
-import { todoReducer } from './shared/reducers/todo.reducers';
+import { TodoEffects } from './todo-list/store/effects/todo.effects';
+import { todoReducer } from './todo-list/store/reducers/todo.reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
