@@ -2,6 +2,8 @@
 
 This is a **Todo List App** built with **Angular** and **NgRx** for efficient state management. The app allows users to **add, edit, delete, and toggle todos**, using **NgRx Actions, Reducers, Effects, and Selectors**.
 
+![Todo List View](read-me-assets/app-view.png)
+
 ## 🚀 Features
 
 - **State Management with NgRx** (Actions, Reducers, Effects, Selectors)
@@ -14,7 +16,7 @@ This is a **Todo List App** built with **Angular** and **NgRx** for efficient st
 
 ## 🛠️ Technologies Used
 
-- **Angular 17** (Standalone Components)
+- **Angular 19** (Standalone Components)
 - **NgRx** (State Management)
 - **Reactive Forms** (Form Handling)
 
