@@ -1,0 +1,38 @@
+
+
+<header>
+  <form [formGroup]="todoForm" (ngSubmit)="saveTodo()" class="todo-form">
+    <h1>Todo List</h1>
+
+    <input class="form-control todo-form--input" type="text" formControlName="title" placeholder="Enter todo" />
+    <button [disabled]="todoForm.invalid" class="btn btn-action todo-form--btn" type="submit">
+      {{ editingTodo ? 'Update Todo' : 'Add Todo' }}
+    </button>
+  </form>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (todo of todos$ | async; track todo.id) {
+      <tr [ngClass]="todo.completed ? 'completed' : 'pending'">
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.completed ? 'Done' : 'Pending' }}</td>
+
+        <td class="table-buttons">
+          <button [disabled]="todo.completed" class="btn btn-action" (click)="markAsDone(todo)">Done</button>
+          <button class="btn btn-success" (click)="editTodo(todo)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
